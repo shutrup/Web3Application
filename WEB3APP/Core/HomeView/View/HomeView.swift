@@ -9,29 +9,89 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var vm: HomeViewModel
+    
     var body: some View {
-        VStack {
-            Text("Connect to:")
+        if vm.session == nil {
+            VStack {
+                Text("Connect to:")
+                    .font(.system(size: 17))
+                    .fontWeight(.bold)
+                
+                Button {
+                    vm.connect(wallet: Wallets.TrustWallet)
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text(Wallets.TrustWallet.name)
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
+                        Spacer()
+                    }
+                    .padding(.vertical, 15)
+                    .background(Color.blue)
+                    .cornerRadius(32)
+                }
+                .padding(.horizontal, 30)
+                .padding(.vertical, 24)
+            }
+        } else {
+            Text("Connected to \(vm.walletName)")
                 .font(.system(size: 17))
                 .fontWeight(.bold)
             
+            Text("Address: \(vm.walletAccount ?? "")")
+                .font(.system(size: 13))
+                .fontWeight(.regular)
+                .lineLimit(1)
+                .truncationMode(.middle)
+                .padding(.top, 10)
+                .padding(.horizontal, 20)
+            
+            if vm.isWrongChain {
+                Text("Connected to wrong chain. Please connect to Polygon")
+                    .font(.system(size: 17))
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 30)
+                    .padding(.top, 30)
+            } else {
+                Button {
+                    vm.sendTx(to: "0x89e7d8Fe0140523EcfD1DDc4F511849429ecB1c2")
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text("Send tx")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.white)
+                        Spacer()
+                    }
+                    .padding(.vertical, 15)
+                    .background(Color.blue)
+                    .cornerRadius(32)
+                }
+                .padding(.horizontal, 30)
+                .padding(.top, 30)
+            }
+            
             Button {
-                vm.connect(wallet: Wallets.TrustWallet)
+                vm.disconnect()
             } label: {
                 HStack {
                     Spacer()
-                    Text(Wallets.TrustWallet.name)
+                    Text("Disconnect")
                         .font(.headline)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
                     Spacer()
                 }
                 .padding(.vertical, 15)
-                .background(Color.blue)
+                .background(Color.red)
                 .cornerRadius(32)
             }
             .padding(.horizontal, 30)
-            .padding(.vertical, 24)
+            .padding(.top, 60)
         }
     }
 }
