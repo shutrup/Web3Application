@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject
     var viewModel = HomeViewModel()
+    @StateObject var store = Store()
     
     var body: some View {
         HomeView()

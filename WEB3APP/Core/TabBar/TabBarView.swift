@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabBarView: View {
     @EnvironmentObject private var store: Store
-    @StateObject var homeVM = HomeViewModel()
+    @EnvironmentObject var vm : HomeViewModel
     
     var body: some View {
         NavigationView {
@@ -35,13 +35,15 @@ struct TabBarView_Previews: PreviewProvider {
 extension TabBarView {
     private var tabBarView: some View {
         TabView (selection: $store.currenTab){
-            HomeView()
-                .environmentObject(homeVM)
+            ProfileView()
+                .environmentObject(vm)
                 .tag(Tab.profile)
                 .navigationBarHidden(true)
+            
             MainScreenView()
                 .tag(Tab.home)
                 .navigationBarHidden(true)
+            
             Text("Lox")
                 .tag(Tab.category)
                 .navigationBarHidden(true)

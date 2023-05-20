@@ -39,7 +39,7 @@ struct MainScreenView: View {
                         .blur(radius: 20)
                     
                     VStack(spacing: 18) {
-                        Image("Primary")
+                        Image("primary")
                             .resizable()
                             .frame(width: 40, height: 44)
                             .foregroundColor(.white)
