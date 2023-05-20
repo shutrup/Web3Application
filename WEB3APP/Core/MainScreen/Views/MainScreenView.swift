@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import MorphingShapes
 
 struct MainScreenView: View {
     @State var dragOffset: CGSize = .zero
