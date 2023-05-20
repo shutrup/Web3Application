@@ -36,7 +36,7 @@ final class HomeViewModel: ObservableObject {
     let deepLinkDelay = 0.5
     
     var isWrongChain: Bool {
-        if let chainId = session?.walletInfo?.chainId, chainId != 137 {
+        if let chainId = session?.walletInfo?.chainId, chainId != 3 {
             return true
         }
         return false

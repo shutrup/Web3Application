@@ -35,16 +35,16 @@ struct Wallet: Hashable {
 
 struct Wallets {
 
-    static let TrustWallet = Wallet(
-        name: "Trust Wallet",
-        mainUrl: "https://trustwallet.com",
-        appStoreLink: "https://apps.apple.com/app/apple-store/id1288339409",
-        universalScheme: "https://link.trustwallet.com",
-        nativeScheme: "trust",
-        linkForOpenOnly: "https://link.trustwallet.com/open_coin?asset=c966"
+    static let Metamask = Wallet(
+        name: "MetaMask",
+        mainUrl: "https://metamask.io",
+        appStoreLink: "https://apps.apple.com/app/metamask/id1438144202",
+        universalScheme: "https://metamask.app.link",
+        nativeScheme: "metamask",
+        linkForOpenOnly: ""
     )
 
-    static let All = [TrustWallet]
+    static let All = [Metamask]
 
     static func available() -> [Wallet] {
         var res: [Wallet] = []

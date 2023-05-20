@@ -18,11 +18,11 @@ struct HomeView: View {
                     .fontWeight(.bold)
                 
                 Button {
-                    vm.connect(wallet: Wallets.TrustWallet)
+                    vm.connect(wallet: Wallets.Metamask)
                 } label: {
                     HStack {
                         Spacer()
-                        Text(Wallets.TrustWallet.name)
+                        Text(Wallets.Metamask.name)
                             .font(.headline)
                             .fontWeight(.bold)
                             .foregroundColor(Color.white)
@@ -34,28 +34,6 @@ struct HomeView: View {
                 }
                 .padding(.horizontal, 30)
                 .padding(.vertical, 24)
-            }
-            .sheet(isPresented: $vm.showSheet) {
-                VStack {
-                    Text("Введите имя")
-                        .font(.title2)
-                    
-                    RoundedTexField(placeholder: "Name", text: $vm.userName, imageName: "chekmark", isSecure: false, isCapitalization: true, imageColor: .black)
-                    
-                    Button {
-                        vm.showSheet.toggle()
-                    } label: {
-                        Text("Сохранить")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .frame(width: 340, height: 50)
-                            .background(Color.blue)
-                            .clipShape(Capsule())
-                            .padding()
-                    }
-                    .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
-                }
-                .presentationDetents([.fraction(0.3)])
             }
         } else {
             Text("Connected to \(vm.walletName)")
@@ -114,6 +92,28 @@ struct HomeView: View {
             }
             .padding(.horizontal, 30)
             .padding(.top, 60)
+            .sheet(isPresented: $vm.showSheet) {
+                VStack {
+                    Text("Введите имя")
+                        .font(.title2)
+                    
+                    RoundedTexField(placeholder: "Name", text: $vm.userName, imageName: "chekmark", isSecure: false, isCapitalization: true, imageColor: .black)
+                    
+                    Button {
+                        vm.showSheet.toggle()
+                    } label: {
+                        Text("Сохранить")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(width: 340, height: 50)
+                            .background(Color.blue)
+                            .clipShape(Capsule())
+                            .padding()
+                    }
+                    .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
+                }
+                .presentationDetents([.fraction(0.3)])
+            }
         }
     }
 }
