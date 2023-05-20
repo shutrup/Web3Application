@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		151EA0DF2A18E0780010CB73 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151EA0DE2A18E0780010CB73 /* RoundedTextField.swift */; };
 		159F57DA2A18B59200C724C6 /* WEB3APPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F57D92A18B59200C724C6 /* WEB3APPApp.swift */; };
 		159F57DC2A18B59200C724C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F57DB2A18B59200C724C6 /* ContentView.swift */; };
 		159F57DE2A18B59400C724C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159F57DD2A18B59400C724C6 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		151EA0DE2A18E0780010CB73 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		159F57D62A18B59200C724C6 /* WEB3APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WEB3APP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		159F57D92A18B59200C724C6 /* WEB3APPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WEB3APPApp.swift; sourceTree = "<group>"; };
 		159F57DB2A18B59200C724C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		151EA0DD2A18E06B0010CB73 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				151EA0DE2A18E0780010CB73 /* RoundedTextField.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		159F57CD2A18B59200C724C6 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		159F57EB2A18C2E300C724C6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				151EA0DD2A18E06B0010CB73 /* Common */,
 				159F57EC2A18C2FF00C724C6 /* HomeView */,
 			);
 			path = Core;
@@ -209,6 +220,7 @@
 				159F57F12A18C32800C724C6 /* HomeView.swift in Sources */,
 				159F57DC2A18B59200C724C6 /* ContentView.swift in Sources */,
 				159F57F92A18C5AC00C724C6 /* HomeViewModel.swift in Sources */,
+				151EA0DF2A18E0780010CB73 /* RoundedTextField.swift in Sources */,
 				159F57DA2A18B59200C724C6 /* WEB3APPApp.swift in Sources */,
 				393DACE72A18C7C300952202 /* WalletConnect.swift in Sources */,
 			);

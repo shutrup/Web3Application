@@ -12,7 +12,17 @@ import SwiftUI
 final class HomeViewModel: ObservableObject {
     
     @Published
-    var session: Session?
+    var showSheet: Bool = false
+    @Published
+    var session: Session? {
+        didSet {
+            if session != nil {
+                showSheet = true
+            }
+        }
+    }
+    @Published
+    var userName: String = ""
     @Published
     var currentWallet: Wallet?
     @Published
