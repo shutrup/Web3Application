@@ -21,6 +21,7 @@ final class HomeViewModel: ObservableObject {
             }
         }
     }
+    
     @Published
     var userName: String = ""
     @Published

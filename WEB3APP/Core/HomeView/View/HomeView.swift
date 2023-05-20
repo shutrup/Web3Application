@@ -29,7 +29,7 @@ struct HomeView: View {
                         Spacer()
                     }
                     .padding(.vertical, 15)
-                    .background(Color.blue)
+                    .background(Color.accentColor)
                     .cornerRadius(32)
                 }
                 .padding(.horizontal, 30)
@@ -68,7 +68,7 @@ struct HomeView: View {
                         Spacer()
                     }
                     .padding(.vertical, 15)
-                    .background(Color.blue)
+                    .background(Color.accenttColor)
                     .cornerRadius(32)
                 }
                 .padding(.horizontal, 30)
@@ -106,7 +106,7 @@ struct HomeView: View {
                             .font(.headline)
                             .foregroundColor(.white)
                             .frame(width: 340, height: 50)
-                            .background(Color.blue)
+                            .background(Color.accentColor)
                             .clipShape(Capsule())
                             .padding()
                     }
