@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import MorphingShapes
 
 struct MainScreenView: View {
     @State var dragOffset: CGSize = .zero
@@ -16,7 +15,7 @@ struct MainScreenView: View {
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [.black, .accenttColor.opacity(0.3)]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
                 
-                ScrollView(showsIndicators: false) {
+                VStack {
                     VStack(alignment: .leading) {
                         HStack {
                             Text("Привет, ")
