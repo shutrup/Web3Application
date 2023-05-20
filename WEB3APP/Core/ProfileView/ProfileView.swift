@@ -12,7 +12,7 @@ struct ProfileView: View {
     
     var body: some View {
         VStack {
-            Text("Connected to \(vm.walletName)")
+            Text("Connected to \(vm.walletName) + \(vm.userName)")
                 .font(.system(size: 17))
                 .fontWeight(.bold)
             
@@ -82,6 +82,9 @@ struct ProfileView: View {
                     
                     Button {
                         vm.showSheet.toggle()
+                        Task {
+                            await vm.createUser()
+                        }
                     } label: {
                         Text("Сохранить")
                             .font(.headline)
@@ -102,6 +105,6 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
-            .environmentObject(HomeViewModel())
+            .environmentObject(HomeViewModel(userService: UserService()))
     }
 }

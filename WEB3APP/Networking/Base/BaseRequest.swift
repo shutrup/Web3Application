@@ -34,6 +34,8 @@ class BaseRequest {
                     request.httpBody = postData
                 } else {
                     request.httpBody = RequestEncoder.json(parameters: body)
+                    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                    request.addValue("application/json", forHTTPHeaderField: "Accept")
                 }
             }
         }

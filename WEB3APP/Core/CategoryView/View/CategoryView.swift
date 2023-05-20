@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CategoryView: View {
+    @StateObject var vm = ExerciseViewModel(exerciseService: ExerciseService())
     var body: some View {
         ScrollView(showsIndicators: false){
             VStack(spacing: 35) {

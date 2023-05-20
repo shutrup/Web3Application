@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject
-    var viewModel = HomeViewModel()
+    var viewModel = HomeViewModel(userService: UserService())
     @StateObject var store = Store()
     
     var body: some View {

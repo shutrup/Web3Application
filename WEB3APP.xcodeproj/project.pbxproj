@@ -34,7 +34,15 @@
 		159F57F12A18C32800C724C6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F57F02A18C32800C724C6 /* HomeView.swift */; };
 		159F57F32A18C45A00C724C6 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F57F22A18C45A00C724C6 /* Wallet.swift */; };
 		159F57F92A18C5AC00C724C6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F57F82A18C5AC00C724C6 /* HomeViewModel.swift */; };
+		3937F5E62A196B4900EF20F0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3937F5E52A196B4900EF20F0 /* Constants.swift */; };
+		3937F5E92A196CC100EF20F0 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3937F5E82A196CC100EF20F0 /* UserService.swift */; };
+		3937F5EB2A196D1900EF20F0 /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3937F5EA2A196D1900EF20F0 /* UserEndpoint.swift */; };
+		3937F5ED2A19708C00EF20F0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3937F5EC2A19708C00EF20F0 /* User.swift */; };
+		3937F5F32A19860300EF20F0 /* ExerciseEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3937F5F22A19860300EF20F0 /* ExerciseEndpoint.swift */; };
+		3937F5F52A1986B900EF20F0 /* ExerciseServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3937F5F42A1986B900EF20F0 /* ExerciseServise.swift */; };
+		3937F5F72A19873700EF20F0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3937F5F62A19873700EF20F0 /* Exercise.swift */; };
 		393DACE72A18C7C300952202 /* WalletConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DACE62A18C7C300952202 /* WalletConnect.swift */; };
+		394789512A198EC5005F10C7 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394789502A198EC5005F10C7 /* ExerciseViewModel.swift */; };
 		39A2D3602A19123100386B94 /* WalletConnectSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39A2D35F2A19123100386B94 /* WalletConnectSwift */; };
 		643810835F8AC1BDAFED2232 /* Pods_WEB3APP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3048D9C2711DEDB6E2129DC2 /* Pods_WEB3APP.framework */; };
 /* End PBXBuildFile section */
@@ -69,7 +77,15 @@
 		159F57F22A18C45A00C724C6 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		159F57F82A18C5AC00C724C6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3048D9C2711DEDB6E2129DC2 /* Pods_WEB3APP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WEB3APP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3937F5E52A196B4900EF20F0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3937F5E82A196CC100EF20F0 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		3937F5EA2A196D1900EF20F0 /* UserEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpoint.swift; sourceTree = "<group>"; };
+		3937F5EC2A19708C00EF20F0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3937F5F22A19860300EF20F0 /* ExerciseEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseEndpoint.swift; sourceTree = "<group>"; };
+		3937F5F42A1986B900EF20F0 /* ExerciseServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseServise.swift; sourceTree = "<group>"; };
+		3937F5F62A19873700EF20F0 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		393DACE62A18C7C300952202 /* WalletConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletConnect.swift; sourceTree = "<group>"; };
+		394789502A198EC5005F10C7 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
 		A8E61C6924B08BC94891C0C7 /* Pods-WEB3APP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WEB3APP.debug.xcconfig"; path = "Target Support Files/Pods-WEB3APP/Pods-WEB3APP.debug.xcconfig"; sourceTree = "<group>"; };
 		C6191FE5F49206CD2A30741D /* Pods-WEB3APP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WEB3APP.release.xcconfig"; path = "Target Support Files/Pods-WEB3APP/Pods-WEB3APP.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +174,7 @@
 		157F2A732A191D570084DFD8 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				3937F5E72A196CB200EF20F0 /* Service */,
 				157F2A762A191D6C0084DFD8 /* Endpoint */,
 				157F2A752A191D5F0084DFD8 /* Base */,
 				157F2A742A191D5C0084DFD8 /* Api */,
@@ -188,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				157F2A812A191D8B0084DFD8 /* Endpoint.swift */,
+				3937F5EA2A196D1900EF20F0 /* UserEndpoint.swift */,
+				3937F5F22A19860300EF20F0 /* ExerciseEndpoint.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -230,6 +249,7 @@
 		159F57D82A18B59200C724C6 /* WEB3APP */ = {
 			isa = PBXGroup;
 			children = (
+				3937F5E42A196B0500EF20F0 /* Constants */,
 				159F57D92A18B59200C724C6 /* WEB3APPApp.swift */,
 				157F2A732A191D570084DFD8 /* Networking */,
 				159F57EB2A18C2E300C724C6 /* Core */,
@@ -254,6 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				159F57F22A18C45A00C724C6 /* Wallet.swift */,
+				3937F5EC2A19708C00EF20F0 /* User.swift */,
+				3937F5F62A19873700EF20F0 /* Exercise.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,8 +327,26 @@
 			children = (
 				159F57F82A18C5AC00C724C6 /* HomeViewModel.swift */,
 				393DACE62A18C7C300952202 /* WalletConnect.swift */,
+				394789502A198EC5005F10C7 /* ExerciseViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3937F5E42A196B0500EF20F0 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				3937F5E52A196B4900EF20F0 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		3937F5E72A196CB200EF20F0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3937F5E82A196CC100EF20F0 /* UserService.swift */,
+				3937F5F42A1986B900EF20F0 /* ExerciseServise.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,11 +470,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				157F2A7D2A191D830084DFD8 /* BaseRequest.swift in Sources */,
+				3937F5E92A196CC100EF20F0 /* UserService.swift in Sources */,
 				159F57F32A18C45A00C724C6 /* Wallet.swift in Sources */,
 				158A51F92A195B6300C05930 /* CategoryCellView.swift in Sources */,
 				157F2A8A2A191D9C0084DFD8 /* URLSession.swift in Sources */,
 				151EA0E52A18EE600010CB73 /* Color + Extension.swift in Sources */,
 				159F57F12A18C32800C724C6 /* HomeView.swift in Sources */,
+				3937F5EB2A196D1900EF20F0 /* UserEndpoint.swift in Sources */,
+				3937F5ED2A19708C00EF20F0 /* User.swift in Sources */,
+				3937F5F52A1986B900EF20F0 /* ExerciseServise.swift in Sources */,
 				151EA0F02A18F4E70010CB73 /* Store.swift in Sources */,
 				157F2A782A191D780084DFD8 /* API.swift in Sources */,
 				159F57DC2A18B59200C724C6 /* ContentView.swift in Sources */,
@@ -442,19 +486,23 @@
 				151EA0E72A18EEA70010CB73 /* MainScreenView.swift in Sources */,
 				159F57F92A18C5AC00C724C6 /* HomeViewModel.swift in Sources */,
 				151EA0DF2A18E0780010CB73 /* RoundedTextField.swift in Sources */,
+				3937F5F72A19873700EF20F0 /* Exercise.swift in Sources */,
 				157F2A872A191D9C0084DFD8 /* CharacterSet.swift in Sources */,
 				159F57DA2A18B59200C724C6 /* WEB3APPApp.swift in Sources */,
 				158A51F72A195B3E00C05930 /* CategoryView.swift in Sources */,
 				157F2A892A191D9C0084DFD8 /* Data.swift in Sources */,
 				151EA0EB2A18EED90010CB73 /* TabBarView.swift in Sources */,
 				393DACE72A18C7C300952202 /* WalletConnect.swift in Sources */,
+				3937F5F32A19860300EF20F0 /* ExerciseEndpoint.swift in Sources */,
 				157F2A882A191D9C0084DFD8 /* Dictionary.swift in Sources */,
 				157F2A822A191D8B0084DFD8 /* Endpoint.swift in Sources */,
 				157F2A802A191D830084DFD8 /* RequestError.swift in Sources */,
 				157F2A7E2A191D830084DFD8 /* RequestEncoder.swift in Sources */,
 				151EA0F62A1908390010CB73 /* ProfileView.swift in Sources */,
+				394789512A198EC5005F10C7 /* ExerciseViewModel.swift in Sources */,
 				157F2A7F2A191D830084DFD8 /* RequestMethod.swift in Sources */,
 				151EA0EE2A18F4CD0010CB73 /* TabBarIcon.swift in Sources */,
+				3937F5E62A196B4900EF20F0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,33 +13,28 @@ import PromiseKit
 
 final class HomeViewModel: ObservableObject {
     
-    func chekBalanse() throws {
-        let web3 = Web3(rpcURL: "https://rpc.ankr.com/eth_goerli")
-        let contractAddress = try EthereumAddress(hex: "0xedc5A7c3f9269E1BB848bB9aACBB5BE1C82bE45f", eip55: true)
-        let contract = try web3.eth.Contract(type: GenericERC20Contract.self, address: contractAddress)
-         
-        firstly {
-            try contract.balanceOf(address: EthereumAddress(hex: "0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8", eip55: true)).call()
-        }.done { outputs in
-            print(outputs["_balance"] as? BigUInt)
-        }.catch { error in
-            print("плохо")
+    let userService: UserServiceProtocol
+    
+    init(userService: UserServiceProtocol) {
+        self.userService = userService
+        if !Constants.userID.isEmpty {
+            Task {
+                await featchUserInfo()
+            }
         }
     }
-    
-    
    
     @Published
     var showSheet: Bool = false
     @Published
     var session: Session?
-//    {
-//        didSet {
-//            if session != nil {
-//                showSheet = true
-//            }
-//        }
-//    }
+    {
+        didSet {
+            if session != nil , Constants.userID.isEmpty{
+                showSheet = true
+            }
+        }
+    }
     @Published
     var userName: String = ""
     @Published
@@ -62,6 +57,8 @@ final class HomeViewModel: ObservableObject {
     }
     
     var walletAccount: String? {
+        Constants.userID = (session?.walletInfo!.accounts[0].lowercased()) ?? ""
+        print(Constants.userID)
         return session?.walletInfo!.accounts[0].lowercased()
     }
     
@@ -72,7 +69,40 @@ final class HomeViewModel: ObservableObject {
         return currentWallet?.name ?? ""
     }
     
+    func featchUserInfo() async {
+        let result = await userService.getUserInfo()
+        switch result {
+        case.success(let data):
+            userName = data.first_name
+            Constants.userID = data.id
+        case.failure(let error):
+            print(error.message)
+        }
+    }
     
+    func createUser() async {
+        let result = await userService.createUser(id: Constants.userID, fullName: userName)
+        switch result {
+        case.success(let data):
+            print(data)
+        case.failure(let error):
+            print(error.message)
+        }
+    }
+    
+    func chekBalanse() throws {
+        let web3 = Web3(rpcURL: "https://rpc.ankr.com/eth_goerli")
+        let contractAddress = try EthereumAddress(hex: "0xedc5A7c3f9269E1BB848bB9aACBB5BE1C82bE45f", eip55: true)
+        let contract = try web3.eth.Contract(type: GenericERC20Contract.self, address: contractAddress)
+         
+        firstly {
+            try contract.balanceOf(address: EthereumAddress(hex: "0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8", eip55: true)).call()
+        }.done { outputs in
+            print(outputs["_balance"] as? BigUInt)
+        }.catch { error in
+            print("плохо")
+        }
+    }
     
     func openWallet() {
         if let wallet = currentWallet {

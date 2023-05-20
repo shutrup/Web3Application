@@ -68,7 +68,7 @@ struct MainScreenView: View {
                     
                     VStack(spacing: 7) {
                         HStack {
-                            Text("500")
+                            Text("0")
                                 .font(.system(size: 27))
                                 .fontWeight(.bold)
                             
@@ -79,13 +79,13 @@ struct MainScreenView: View {
                             
                             Spacer()
                             
-                            Text("1500")
+                            Text("50")
                                 .font(.system(size: 27))
                                 .fontWeight(.bold)
                         }
                         .padding(.horizontal)
                         
-                        ProgressView(value: 3, total: 10)
+                        ProgressView(value: 10, total: 50)
                             .tint(.accenttColor)
                             .frame(height: 5)
                             .cornerRadius(10)
