@@ -28,6 +28,7 @@ struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         TabBarView()
             .environmentObject(Store())
+            .environmentObject(HomeViewModel())
     }
 }
 

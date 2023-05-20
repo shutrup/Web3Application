@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoryView: View {
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false){
             VStack(spacing: 35) {
                 ForEach(0..<5, id: \.self) { _ in
                     CategoryCellView(title: "Скучивание", minute: 10)
