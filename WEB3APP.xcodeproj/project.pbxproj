@@ -252,11 +252,11 @@
 		159F57EB2A18C2E300C724C6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				151EA0F32A1908240010CB73 /* ProfileView */,
-				151EA0E82A18EEC50010CB73 /* TabBar */,
-				151EA0E02A18ED380010CB73 /* MainScreen */,
 				151EA0DD2A18E06B0010CB73 /* Common */,
 				159F57EC2A18C2FF00C724C6 /* HomeView */,
+				151EA0E02A18ED380010CB73 /* MainScreen */,
+				151EA0F32A1908240010CB73 /* ProfileView */,
+				151EA0E82A18EEC50010CB73 /* TabBar */,
 			);
 			path = Core;
 			sourceTree = "<group>";
