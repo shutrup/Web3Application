@@ -7,8 +7,10 @@
 
 import Foundation
 import WalletConnectSwift
+import Web3
 
 class WalletConnect {
+
     
     static let sessionKey = "session_key"
     
