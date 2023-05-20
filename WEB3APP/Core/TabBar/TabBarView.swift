@@ -44,7 +44,7 @@ extension TabBarView {
                 .tag(Tab.home)
                 .navigationBarHidden(true)
             
-            Text("Lox")
+            CategoryView()
                 .tag(Tab.category)
                 .navigationBarHidden(true)
         }
