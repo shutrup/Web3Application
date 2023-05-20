@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var vm: HomeViewModel
     var body: some View {
         VStack {
             Text("Connect to:")
@@ -15,7 +16,7 @@ struct HomeView: View {
                 .fontWeight(.bold)
             
             Button {
-                
+                vm.connect(wallet: Wallets.TrustWallet)
             } label: {
                 HStack {
                     Spacer()
@@ -38,5 +39,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(HomeViewModel())
     }
 }
