@@ -28,6 +28,7 @@ struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         TabBarView()
             .environmentObject(Store())
+            .environmentObject(HomeViewModel())
     }
 }
 
@@ -44,7 +45,7 @@ extension TabBarView {
                 .tag(Tab.home)
                 .navigationBarHidden(true)
             
-            Text("Lox")
+            CategoryView()
                 .tag(Tab.category)
                 .navigationBarHidden(true)
         }

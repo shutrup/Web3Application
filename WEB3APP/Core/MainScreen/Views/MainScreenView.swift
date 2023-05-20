@@ -11,121 +11,124 @@ struct MainScreenView: View {
     @State var dragOffset: CGSize = .zero
     
     var body: some View {
-        ZStack {
-            LinearGradient(gradient: Gradient(colors: [.black, .accenttColor.opacity(0.3)]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
-            
-            VStack {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Привет, ")
-                        
-                        Text("Бага")
-                            .foregroundColor(Color.accenttColor)
-                    }
-                    .font(.system(size: 27))
-                    .fontWeight(.bold)
-                    
-                    Text("Готов к занятиям?")
-                        .font(.system(size: 15))
-                        .fontWeight(.semibold)
-                        .opacity(0.86)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal)
+        VStack {
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: [.black, .accenttColor.opacity(0.3)]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
                 
-                ZStack {
-                    ClubbedView()
-                        .blur(radius: 10)
-                        .zIndex(1)
-                    
-                    VStack(spacing: 18) {
-                        Image("primary")
-                            .resizable()
-                            .frame(width: 35, height: 44)
-                            .foregroundColor(.white)
-                            .shadow(color: Color.white.opacity(0.82), radius: 13, x: 0, y: 0)
-                        
-                        VStack(spacing: 12) {
-                            HStack {
-                                Text("15 /")
-                                
-                                Text("30")
-                            }
-                            .fontWeight(.bold)
-                            .font(.system(size: 27))
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("Привет, ")
                             
-                            Text("Осталось 15 очков!")
-                                .opacity(0.86)
-                                .font(.system(size: 15))
-                                .fontWeight(.semibold)
+                            Text("Бага")
+                                .foregroundColor(Color.accenttColor)
                         }
-                    }
-                    .zIndex(2)
-                }
-                .padding(.top, 54)
-                
-                VStack(spacing: 7) {
-                    HStack {
-                        Text("500")
-                            .font(.system(size: 27))
-                            .fontWeight(.bold)
+                        .font(.system(size: 27))
+                        .fontWeight(.bold)
                         
-                        Text("TOGO")
+                        Text("Готов к занятиям?")
                             .font(.system(size: 15))
                             .fontWeight(.semibold)
+                            .opacity(0.86)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                    
+                    ZStack {
+                        ClubbedView()
+                            .frame(width: 230, height: 230)
+                            .blur(radius: 10)
+                            .zIndex(1)
+                        
+                        VStack(spacing: 18) {
+                            Image("primary")
+                                .resizable()
+                                .frame(width: 35, height: 44)
+                                .foregroundColor(.white)
+                                .shadow(color: Color.white.opacity(0.82), radius: 13, x: 0, y: 0)
+                            
+                            VStack(spacing: 12) {
+                                HStack {
+                                    Text("15 /")
+                                    
+                                    Text("30")
+                                }
+                                .fontWeight(.bold)
+                                .font(.system(size: 27))
+                                
+                                Text("Осталось 15 очков!")
+                                    .opacity(0.86)
+                                    .font(.system(size: 15))
+                                    .fontWeight(.semibold)
+                            }
+                        }
+                        .zIndex(2)
+                    }
+                    .padding(.top, 54)
+                    
+                    VStack(spacing: 7) {
+                        HStack {
+                            Text("500")
+                                .font(.system(size: 27))
+                                .fontWeight(.bold)
+                            
+                            Text("TOGO")
+                                .font(.system(size: 15))
+                                .fontWeight(.semibold)
+                                .padding(.top, 5)
+                            
+                            Spacer()
+                            
+                            Text("1500")
+                                .font(.system(size: 27))
+                                .fontWeight(.bold)
+                        }
+                        .padding(.horizontal)
+                        
+                        ProgressView(value: 3, total: 10)
+                            .tint(.accenttColor)
+                            .frame(height: 5)
+                            .cornerRadius(10)
+                            .scaleEffect(x: 1, y: 3.5, anchor: .center)
+                            .padding(.horizontal, 16)
+                        
+                        Text("Путь к бесплатному абонементу")
+                            .font(.system(size: 15))
+                            .bold()
+                            .opacity(0.86)
+                            .padding(.horizontal)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.top, 5)
-                        
-                        Spacer()
-                        
-                        Text("1500")
+                    }
+                    .padding(.top, 28)
+                    
+                    VStack(alignment: .leading){
+                        Text("Календарь")
                             .font(.system(size: 27))
                             .fontWeight(.bold)
+                        
+                        Text("Май, 2023")
+                            .font(.system(size: 15))
+                            .fontWeight(.semibold)
+                            .opacity(0.86)
+                            .foregroundColor(.accenttColor)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                    .padding(.top, 35)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 20) {
+                            ForEach(1..<30) { int in
+                                CalendarCellView(day: int)
+                                    .padding(2)
+                            }
+                        }
                     }
                     .padding(.horizontal)
                     
-                    ProgressView(value: 3, total: 10)
-                        .tint(.accenttColor)
-                        .frame(height: 5)
-                        .cornerRadius(10)
-                        .scaleEffect(x: 1, y: 3.5, anchor: .center)
-                        .padding(.horizontal, 16)
-                    
-                    Text("Путь к бесплатному абонементу")
-                        .font(.system(size: 15))
-                        .bold()
-                        .opacity(0.86)
-                        .padding(.horizontal)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.top, 5)
+                    Spacer()
                 }
-                .padding(.top, 28)
-                
-                VStack(alignment: .leading){
-                    Text("Календарь")
-                        .font(.system(size: 27))
-                        .fontWeight(.bold)
-                    
-                    Text("Май, 2023")
-                        .font(.system(size: 15))
-                        .fontWeight(.semibold)
-                        .opacity(0.86)
-                        .foregroundColor(.accenttColor)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal)
-                .padding(.top, 35)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        ForEach(1..<30) { int in
-                            CalendarCellView(day: int)
-                                .padding(2)
-                        }
-                    }
-                }
-                .padding(.horizontal)
-                
-                Spacer()
             }
         }
     }
@@ -145,20 +148,13 @@ struct MainScreenView: View {
                 }
             } symbols: {
                 ForEach(1...15, id: \.self) { i in
-                    let offset = CGSize(width: .random(in: -70...70), height: .random(in: -100...100))
+                    let offset = CGSize(width: .random(in: -60...60), height: .random(in: -60...60))
 
                     ClubbedRoundedRectangle(offset: offset)
                         .tag(i)
                 }
             }
         }
-    }
-    
-    @ViewBuilder func Ball(offset: CGSize = .zero) -> some View {
-        Circle()
-            .fill(.white)
-            .frame(width: 150, height: 150)
-            .offset(offset)
     }
     
     @ViewBuilder func ClubbedRoundedRectangle(offset: CGSize = .zero) -> some View {
