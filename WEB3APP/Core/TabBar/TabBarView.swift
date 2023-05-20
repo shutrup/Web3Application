@@ -50,7 +50,7 @@ extension TabBarView {
                 .navigationBarHidden(true)
         }
         .onAppear {
-            UITabBar.appearance().barTintColor = .white
+            UITabBar.appearance().barTintColor = .clear
         }
     }
     private var tabBarIcon: some View {
