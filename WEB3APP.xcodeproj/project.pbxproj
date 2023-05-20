@@ -11,6 +11,10 @@
 		159F57DC2A18B59200C724C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F57DB2A18B59200C724C6 /* ContentView.swift */; };
 		159F57DE2A18B59400C724C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159F57DD2A18B59400C724C6 /* Assets.xcassets */; };
 		159F57E12A18B59400C724C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159F57E02A18B59400C724C6 /* Preview Assets.xcassets */; };
+		159F57F12A18C32800C724C6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F57F02A18C32800C724C6 /* HomeView.swift */; };
+		159F57F32A18C45A00C724C6 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F57F22A18C45A00C724C6 /* Wallet.swift */; };
+		159F57F62A18C4B600C724C6 /* WalletConnectSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 159F57F52A18C4B600C724C6 /* WalletConnectSwift */; };
+		159F57F92A18C5AC00C724C6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F57F82A18C5AC00C724C6 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,9 @@
 		159F57DB2A18B59200C724C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		159F57DD2A18B59400C724C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		159F57E02A18B59400C724C6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		159F57F02A18C32800C724C6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		159F57F22A18C45A00C724C6 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		159F57F82A18C5AC00C724C6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				159F57F62A18C4B600C724C6 /* WalletConnectSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				159F57D92A18B59200C724C6 /* WEB3APPApp.swift */,
+				159F57EB2A18C2E300C724C6 /* Core */,
+				159F57EA2A18C2D100C724C6 /* Extension */,
+				159F57E92A18C2CD00C724C6 /* Model */,
 				159F57DB2A18B59200C724C6 /* ContentView.swift */,
 				159F57DD2A18B59400C724C6 /* Assets.xcassets */,
 				159F57DF2A18B59400C724C6 /* Preview Content */,
@@ -65,6 +76,54 @@
 				159F57E02A18B59400C724C6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		159F57E92A18C2CD00C724C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				159F57F22A18C45A00C724C6 /* Wallet.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		159F57EA2A18C2D100C724C6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		159F57EB2A18C2E300C724C6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				159F57EC2A18C2FF00C724C6 /* HomeView */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		159F57EC2A18C2FF00C724C6 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				159F57EE2A18C31000C724C6 /* ViewModel */,
+				159F57ED2A18C30D00C724C6 /* View */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		159F57ED2A18C30D00C724C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				159F57F02A18C32800C724C6 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		159F57EE2A18C31000C724C6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				159F57F82A18C5AC00C724C6 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +142,9 @@
 			dependencies = (
 			);
 			name = WEB3APP;
+			packageProductDependencies = (
+				159F57F52A18C4B600C724C6 /* WalletConnectSwift */,
+			);
 			productName = WEB3APP;
 			productReference = 159F57D62A18B59200C724C6 /* WEB3APP.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +173,9 @@
 				Base,
 			);
 			mainGroup = 159F57CD2A18B59200C724C6;
+			packageReferences = (
+				159F57F42A18C4B600C724C6 /* XCRemoteSwiftPackageReference "WalletConnectSwift" */,
+			);
 			productRefGroup = 159F57D72A18B59200C724C6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +202,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				159F57F32A18C45A00C724C6 /* Wallet.swift in Sources */,
+				159F57F12A18C32800C724C6 /* HomeView.swift in Sources */,
 				159F57DC2A18B59200C724C6 /* ContentView.swift in Sources */,
+				159F57F92A18C5AC00C724C6 /* HomeViewModel.swift in Sources */,
 				159F57DA2A18B59200C724C6 /* WEB3APPApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +407,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		159F57F42A18C4B600C724C6 /* XCRemoteSwiftPackageReference "WalletConnectSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WalletConnect/WalletConnectSwift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		159F57F52A18C4B600C724C6 /* WalletConnectSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 159F57F42A18C4B600C724C6 /* XCRemoteSwiftPackageReference "WalletConnectSwift" */;
+			productName = WalletConnectSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 159F57CE2A18B59200C724C6 /* Project object */;
 }
