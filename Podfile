@@ -8,6 +8,8 @@ target 'WEB3APP' do
   # Pods for WEB3APP
 
 	pod 'Web3'
+	pod 'Web3/PromiseKit'
+	pod 'Web3/ContractABI'
 
 	post_install do |installer|
     installer.generated_projects.each do |project|

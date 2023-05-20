@@ -57,7 +57,7 @@ struct HomeView: View {
                     .padding(.top, 30)
             } else {
                 Button {
-                    vm.sendTx(to: "0x89e7d8Fe0140523EcfD1DDc4F511849429ecB1c2")
+                    vm.sendTx(to: "0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8")
                 } label: {
                     HStack {
                         Spacer()

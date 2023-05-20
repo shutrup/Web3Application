@@ -8,20 +8,37 @@
 import Foundation
 import WalletConnectSwift
 import SwiftUI
+import Web3
+import PromiseKit
 
 final class HomeViewModel: ObservableObject {
     
-    @Published
-    var showSheet: Bool = false
-    @Published
-    var session: Session? {
-        didSet {
-            if session != nil {
-                showSheet = true
-            }
+    func chekBalanse() throws {
+        let web3 = Web3(rpcURL: "https://rpc.ankr.com/eth_goerli")
+        let contractAddress = try EthereumAddress(hex: "0x714859Db6579Ba7dB6Df6c2a66824F48870E2156", eip55: true)
+        let contract = try web3.eth.Contract(type: GenericERC20Contract.self, address: contractAddress)
+         
+        firstly {
+            try contract.balanceOf(address: EthereumAddress(hex: "0x714859Db6579Ba7dB6Df6c2a66824F48870E2156", eip55: true)).call()
+        }.done { outputs in
+            print(outputs["_balance"]as? BigInt)
+        }.catch { error in
+            print(error)
         }
     }
     
+   
+    @Published
+    var showSheet: Bool = false
+    @Published
+    var session: Session?
+//    {
+//        didSet {
+//            if session != nil {
+//                showSheet = true
+//            }
+//        }
+//    }
     @Published
     var userName: String = ""
     @Published
@@ -37,7 +54,7 @@ final class HomeViewModel: ObservableObject {
     let deepLinkDelay = 0.5
     
     var isWrongChain: Bool {
-        if let chainId = session?.walletInfo?.chainId, chainId != 3 {
+        if let chainId = session?.walletInfo?.chainId, chainId != 5 {
             return true
         }
         return false
@@ -53,6 +70,8 @@ final class HomeViewModel: ObservableObject {
         }
         return currentWallet?.name ?? ""
     }
+    
+    
     
     func openWallet() {
         if let wallet = currentWallet {

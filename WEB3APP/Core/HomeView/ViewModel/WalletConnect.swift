@@ -7,10 +7,8 @@
 
 import Foundation
 import WalletConnectSwift
-import Web3
 
 class WalletConnect {
-
     
     static let sessionKey = "session_key"
     
@@ -32,7 +30,7 @@ class WalletConnect {
                                             url: URL(string: "https://medium.com")!)
         let dAppInfo = Session.DAppInfo(peerId: UUID().uuidString,
                                         peerMeta: clientMeta,
-                                        chainId: 3) // Polygon chain
+                                        chainId: 5) // Polygon chain
         client = Client(delegate: self, dAppInfo: dAppInfo)
         try! client.connect(to: wcUrl)
         return wcUrl.fullyPercentEncodedStr

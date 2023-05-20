@@ -12,9 +12,10 @@ struct WEB3APPApp: App {
     @StateObject var store = Store()
     var body: some Scene {
         WindowGroup {
-            TabBarView()
-                .environmentObject(store)
-                .preferredColorScheme(.dark)
+            ContentView()
+//            TabBarView()
+//                .environmentObject(store)
+//                .preferredColorScheme(.dark)
         }
     }
 }
