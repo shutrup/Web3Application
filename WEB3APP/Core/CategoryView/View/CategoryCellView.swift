@@ -32,7 +32,7 @@ struct CategoryCellView: View {
                             .fontWeight(.semibold)
                             .opacity(0.86)
                         
-                        Text("минут")
+                        Text("секунд")
                             .font(.system(size: 15))
                             .fontWeight(.semibold)
                             .opacity(0.86)

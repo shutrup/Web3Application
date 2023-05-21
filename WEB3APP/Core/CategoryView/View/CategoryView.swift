@@ -39,7 +39,7 @@ struct CategoryView: View {
                 Task {
                     await vm.getExercises()
                 }
-        }
+            }
         }
     }
 }

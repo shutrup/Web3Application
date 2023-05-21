@@ -10,6 +10,7 @@ import Foundation
 enum ExerciseEndpoint: Endpoint {
     case getExercises
     case getExercise(id: Int)
+    case exercises(user: String, exercise: Int)
     
     var path: String {
         switch self {
@@ -17,6 +18,8 @@ enum ExerciseEndpoint: Endpoint {
             return API.exercises
         case.getExercise(let id):
             return API.exercise+"\(id)/"
+        case.exercises:
+            return API.exerciseUser
         }
     }
     
@@ -26,11 +29,21 @@ enum ExerciseEndpoint: Endpoint {
             return .get
         case .getExercises:
             return.get
+        case.exercises:
+            return.post
         }
     }
     
     var parameters: [String : Any]? {
-        return nil
+        switch self {
+        case .getExercises:
+            return [:]
+        case .getExercise:
+            return [:]
+        case .exercises(let user, let exercise):
+            return ["user": user,
+                    "exercise": exercise]
+        }
     }
     
     var header: [String : String]? {

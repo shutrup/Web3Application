@@ -19,6 +19,8 @@ struct API {
     static var exercises = "/api/exercise/"
     static var exercise = "/api/exercise/"
     
+    static var exerciseUser = "/api/exercise-user/"
+    
     static var countMouth = "/api/0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8/count_mouth"
 }
 

@@ -46,4 +46,14 @@ final class CategoryViewModel: ObservableObject {
             print(failure.message)
         }
     }
+    
+    @MainActor func exerciseUser(user: String, exercise: Int) async {
+        let result = await exerciseService.exercise(user: user, exercise: exercise)
+        switch result {
+        case .success(let success):
+            print(success.exercise)
+        case .failure(let failure):
+            print(failure.message)
+        }
+    }
 }
