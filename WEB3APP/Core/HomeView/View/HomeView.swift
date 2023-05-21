@@ -13,28 +13,32 @@ struct HomeView: View {
     
     var body: some View {
         if vm.session == nil {
-            VStack {
-                Text("Connect to:")
-                    .font(.system(size: 17))
-                    .fontWeight(.bold)
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: [.black, .accenttColor.opacity(0.4)]), startPoint: .bottom, endPoint: .top).ignoresSafeArea()
                 
-                Button {
-                    vm.connect(wallet: Wallets.Metamask)
-                } label: {
-                    HStack {
-                        Spacer()
-                        Text(Wallets.Metamask.name)
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.white)
-                        Spacer()
+                VStack {
+                    Text("Connect to:")
+                        .font(.system(size: 17))
+                        .fontWeight(.bold)
+                    
+                    Button {
+                        vm.connect(wallet: Wallets.Metamask)
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Text(Wallets.Metamask.name)
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.white)
+                            Spacer()
+                        }
+                        .padding(.vertical, 15)
+                        .background(Color.accentColor)
+                        .cornerRadius(32)
                     }
-                    .padding(.vertical, 15)
-                    .background(Color.accentColor)
-                    .cornerRadius(32)
+                    .padding(.horizontal, 30)
+                    .padding(.vertical, 24)
                 }
-                .padding(.horizontal, 30)
-                .padding(.vertical, 24)
             }
         } else {
             TabBarView()
