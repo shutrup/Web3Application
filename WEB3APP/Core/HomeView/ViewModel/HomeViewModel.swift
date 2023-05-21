@@ -69,6 +69,7 @@ final class HomeViewModel: ObservableObject {
         return currentWallet?.name ?? ""
     }
     
+    @MainActor
     func featchUserInfo() async {
         let result = await userService.getUserInfo()
         switch result {
@@ -80,6 +81,7 @@ final class HomeViewModel: ObservableObject {
         }
     }
     
+    @MainActor
     func createUser() async {
         let result = await userService.createUser(id: Constants.userID, fullName: userName)
         switch result {
