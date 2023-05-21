@@ -42,6 +42,7 @@ extension TabBarView {
                 .navigationBarHidden(true)
             
             MainScreenView()
+                .environmentObject(vm)
                 .tag(Tab.home)
                 .navigationBarHidden(true)
             

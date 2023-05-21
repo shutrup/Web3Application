@@ -8,8 +8,8 @@
 import Foundation
 
 enum UserEndpoint: Endpoint {
-case createUser(id: String, full_name: String)
-case getUserInfo
+    case createUser(id: String, full_name: String)
+    case getUserInfo
     
     var path: String {
         switch self {

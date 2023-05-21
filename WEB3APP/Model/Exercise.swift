@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Exercise: Codable {
+struct Exercise: Codable, Hashable {
     let count: Int
     let next: String
     let previous: String?
@@ -15,7 +15,7 @@ struct Exercise: Codable {
 }
 
 // MARK: - Result
-struct Results: Codable {
+struct Results: Codable, Hashable {
     let id: Int
     let title: String
     let photos: Photos
@@ -29,7 +29,7 @@ struct Results: Codable {
     }
 }
 
-struct Photos: Codable {
+struct Photos: Codable, Hashable {
     let the1: String
 
     enum CodingKeys: String, CodingKey {

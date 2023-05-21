@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct CategoryView: View {
-    @StateObject var vm = ExerciseViewModel(exerciseService: ExerciseService())
+    @StateObject var vm = CategoryViewModel(exerciseService: ExerciseService())
+    
     var body: some View {
         ScrollView(showsIndicators: false){
             VStack(spacing: 35) {
-                ForEach(0..<5, id: \.self) { _ in
-                    CategoryCellView(title: "Скучивание", minute: 10)
+                ForEach(vm.exercises, id: \.self) { exercises in
+                    CategoryCellView(title: exercises.title, minute: exercises.secondsTime, point: exercises.point, imageUrl: exercises.photos.the1)
+                        .onTapGesture {
+                            Task {
+                                await vm.getExercise(id: exercises.id)
+                            }
+                        }
                 }
+            }
+        }
+        .onAppear {
+            Task {
+                await vm.getExercises()
             }
         }
     }

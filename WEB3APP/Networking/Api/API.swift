@@ -11,6 +11,7 @@ struct API {
     static var baseUrl = "http://195.135.255.26"
     
     static var apiDays = "/api/\(Constants.userID)/days"
+    static var apiDaysList = "/api/\(Constants.userID)/days/list"
     
     static var createUser = "/api/user/"
     static var getUserInfo = "/api/user/\(Constants.userID)/"

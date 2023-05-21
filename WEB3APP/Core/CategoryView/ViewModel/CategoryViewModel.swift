@@ -1,5 +1,5 @@
 //
-//  ExerciseViewModel.swift
+//  CategoryViewModel.swift
 //  WEB3APP
 //
 //  Created by timur on 21.05.2023.
@@ -7,23 +7,21 @@
 
 import Foundation
 
-final class ExerciseViewModel: ObservableObject {
+final class CategoryViewModel: ObservableObject {
     
     let exerciseService: ExerciseServiceProtocol
     
     init(exerciseService: ExerciseServiceProtocol) {
         self.exerciseService = exerciseService
-        Task {
-            await getExercises()
-            await getExercise(id: 3)
-        }
     }
+    
+    @Published var exercises: [Results] = []
     
     @MainActor func getExercises() async {
         let result = await exerciseService.getExercises()
         switch result {
         case .success(let success):
-            print(success)
+            self.exercises = success.results
         case .failure(let failure):
             print(failure.message)
         }

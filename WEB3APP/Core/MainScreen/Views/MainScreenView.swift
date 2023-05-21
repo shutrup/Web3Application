@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainScreenView: View {
+    @EnvironmentObject var homeVM: HomeViewModel
     @State var dragOffset: CGSize = .zero
     
     var body: some View {
@@ -20,7 +21,7 @@ struct MainScreenView: View {
                         HStack {
                             Text("Привет, ")
                             
-                            Text("Бага")
+                            Text(homeVM.userName)
                                 .foregroundColor(Color.accenttColor)
                         }
                         .font(.system(size: 27))
@@ -169,6 +170,7 @@ struct MainScreenView: View {
 struct MainScreenView_Previews: PreviewProvider {
     static var previews: some View {
         MainScreenView()
+            .environmentObject(HomeViewModel(userService: UserService()))
     }
 }
 

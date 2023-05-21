@@ -12,7 +12,7 @@ struct HomeView: View {
     @StateObject var store = Store()
     
     var body: some View {
-        if vm.session == nil {
+        if vm.session != nil {
             VStack {
                 Text("Connect to:")
                     .font(.system(size: 17))

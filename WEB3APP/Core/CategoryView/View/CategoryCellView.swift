@@ -6,15 +6,18 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct CategoryCellView: View {
     let title: String
     let minute: Int
+    let point: Int
+    let imageUrl: String
     
     var body: some View {
         HStack {
             HStack {
-                Image("ima")
+                WebImage(url: URL(string: imageUrl))
                     .resizable()
                     .frame(width: 84, height: 47)
                 
@@ -44,7 +47,7 @@ struct CategoryCellView: View {
                         .frame(width: 15, height: 20)
                         .foregroundColor(.accenttColor)
                     
-                    Text("5")
+                    Text("\(point)")
                         .font(.system(size: 27))
                         .fontWeight(.bold)
                 }
@@ -64,6 +67,6 @@ struct CategoryCellView: View {
 
 struct CategoryCellView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryCellView(title: "Скручивания", minute: 10)
+        CategoryCellView(title: "Скручивания", minute: 10, point: 0, imageUrl: "")
     }
 }

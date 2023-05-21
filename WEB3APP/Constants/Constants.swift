@@ -9,5 +9,6 @@ import SwiftUI
 
 struct Constants {
     @AppStorage("userID") static var userID = String()
+    @AppStorage("userName") static var userName = String()
 }
 

@@ -27,6 +27,10 @@
 		157F2A8A2A191D9C0084DFD8 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157F2A862A191D9C0084DFD8 /* URLSession.swift */; };
 		158A51F72A195B3E00C05930 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158A51F62A195B3E00C05930 /* CategoryView.swift */; };
 		158A51F92A195B6300C05930 /* CategoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158A51F82A195B6300C05930 /* CategoryCellView.swift */; };
+		158A51FD2A19960200C05930 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 158A51FC2A19960200C05930 /* SDWebImageSwiftUI */; };
+		158A52002A19987A00C05930 /* DaysService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158A51FF2A19987A00C05930 /* DaysService.swift */; };
+		158A52032A1998A600C05930 /* DaysEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158A52022A1998A600C05930 /* DaysEndpoint.swift */; };
+		158A52052A199BE700C05930 /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158A52042A199BE700C05930 /* Days.swift */; };
 		159F57DA2A18B59200C724C6 /* WEB3APPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F57D92A18B59200C724C6 /* WEB3APPApp.swift */; };
 		159F57DC2A18B59200C724C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159F57DB2A18B59200C724C6 /* ContentView.swift */; };
 		159F57DE2A18B59400C724C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159F57DD2A18B59400C724C6 /* Assets.xcassets */; };
@@ -42,7 +46,7 @@
 		3937F5F52A1986B900EF20F0 /* ExerciseServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3937F5F42A1986B900EF20F0 /* ExerciseServise.swift */; };
 		3937F5F72A19873700EF20F0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3937F5F62A19873700EF20F0 /* Exercise.swift */; };
 		393DACE72A18C7C300952202 /* WalletConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DACE62A18C7C300952202 /* WalletConnect.swift */; };
-		394789512A198EC5005F10C7 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394789502A198EC5005F10C7 /* ExerciseViewModel.swift */; };
+		394789512A198EC5005F10C7 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394789502A198EC5005F10C7 /* CategoryViewModel.swift */; };
 		39A2D3602A19123100386B94 /* WalletConnectSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39A2D35F2A19123100386B94 /* WalletConnectSwift */; };
 		643810835F8AC1BDAFED2232 /* Pods_WEB3APP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3048D9C2711DEDB6E2129DC2 /* Pods_WEB3APP.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +72,9 @@
 		157F2A862A191D9C0084DFD8 /* URLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 		158A51F62A195B3E00C05930 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		158A51F82A195B6300C05930 /* CategoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellView.swift; sourceTree = "<group>"; };
+		158A51FF2A19987A00C05930 /* DaysService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysService.swift; sourceTree = "<group>"; };
+		158A52022A1998A600C05930 /* DaysEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysEndpoint.swift; sourceTree = "<group>"; };
+		158A52042A199BE700C05930 /* Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Days.swift; sourceTree = "<group>"; };
 		159F57D62A18B59200C724C6 /* WEB3APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WEB3APP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		159F57D92A18B59200C724C6 /* WEB3APPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WEB3APPApp.swift; sourceTree = "<group>"; };
 		159F57DB2A18B59200C724C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,7 +92,7 @@
 		3937F5F42A1986B900EF20F0 /* ExerciseServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseServise.swift; sourceTree = "<group>"; };
 		3937F5F62A19873700EF20F0 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		393DACE62A18C7C300952202 /* WalletConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletConnect.swift; sourceTree = "<group>"; };
-		394789502A198EC5005F10C7 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
+		394789502A198EC5005F10C7 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		A8E61C6924B08BC94891C0C7 /* Pods-WEB3APP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WEB3APP.debug.xcconfig"; path = "Target Support Files/Pods-WEB3APP/Pods-WEB3APP.debug.xcconfig"; sourceTree = "<group>"; };
 		C6191FE5F49206CD2A30741D /* Pods-WEB3APP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WEB3APP.release.xcconfig"; path = "Target Support Files/Pods-WEB3APP/Pods-WEB3APP.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				158A51FD2A19960200C05930 /* SDWebImageSwiftUI in Frameworks */,
 				39A2D3602A19123100386B94 /* WalletConnectSwift in Frameworks */,
 				643810835F8AC1BDAFED2232 /* Pods_WEB3APP.framework in Frameworks */,
 			);
@@ -131,7 +139,6 @@
 		151EA0E02A18ED380010CB73 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				151EA0E22A18ED570010CB73 /* ViewModels */,
 				151EA0E12A18ED520010CB73 /* Views */,
 			);
 			path = MainScreen;
@@ -144,13 +151,6 @@
 				151EA0F12A18FF1F0010CB73 /* CalendarCellView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		151EA0E22A18ED570010CB73 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		151EA0E82A18EEC50010CB73 /* TabBar */ = {
@@ -207,6 +207,7 @@
 				157F2A812A191D8B0084DFD8 /* Endpoint.swift */,
 				3937F5EA2A196D1900EF20F0 /* UserEndpoint.swift */,
 				3937F5F22A19860300EF20F0 /* ExerciseEndpoint.swift */,
+				158A52022A1998A600C05930 /* DaysEndpoint.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -214,6 +215,7 @@
 		158A51F42A195B2F00C05930 /* CategoryView */ = {
 			isa = PBXGroup;
 			children = (
+				158A51FA2A1993CF00C05930 /* ViewModel */,
 				158A51F52A195B3400C05930 /* View */,
 			);
 			path = CategoryView;
@@ -226,6 +228,14 @@
 				158A51F82A195B6300C05930 /* CategoryCellView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		158A51FA2A1993CF00C05930 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				394789502A198EC5005F10C7 /* CategoryViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		159F57CD2A18B59200C724C6 = {
@@ -276,6 +286,7 @@
 				159F57F22A18C45A00C724C6 /* Wallet.swift */,
 				3937F5EC2A19708C00EF20F0 /* User.swift */,
 				3937F5F62A19873700EF20F0 /* Exercise.swift */,
+				158A52042A199BE700C05930 /* Days.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,7 +338,6 @@
 			children = (
 				159F57F82A18C5AC00C724C6 /* HomeViewModel.swift */,
 				393DACE62A18C7C300952202 /* WalletConnect.swift */,
-				394789502A198EC5005F10C7 /* ExerciseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -345,6 +355,7 @@
 			children = (
 				3937F5E82A196CC100EF20F0 /* UserService.swift */,
 				3937F5F42A1986B900EF20F0 /* ExerciseServise.swift */,
+				158A51FF2A19987A00C05930 /* DaysService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -369,6 +380,7 @@
 			name = WEB3APP;
 			packageProductDependencies = (
 				39A2D35F2A19123100386B94 /* WalletConnectSwift */,
+				158A51FC2A19960200C05930 /* SDWebImageSwiftUI */,
 			);
 			productName = WEB3APP;
 			productReference = 159F57D62A18B59200C724C6 /* WEB3APP.app */;
@@ -400,6 +412,7 @@
 			mainGroup = 159F57CD2A18B59200C724C6;
 			packageReferences = (
 				39A2D35E2A19123100386B94 /* XCRemoteSwiftPackageReference "WalletConnectSwift" */,
+				158A51FB2A19960200C05930 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 159F57D72A18B59200C724C6 /* Products */;
 			projectDirPath = "";
@@ -470,6 +483,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				157F2A7D2A191D830084DFD8 /* BaseRequest.swift in Sources */,
+				158A52052A199BE700C05930 /* Days.swift in Sources */,
+				158A52002A19987A00C05930 /* DaysService.swift in Sources */,
 				3937F5E92A196CC100EF20F0 /* UserService.swift in Sources */,
 				159F57F32A18C45A00C724C6 /* Wallet.swift in Sources */,
 				158A51F92A195B6300C05930 /* CategoryCellView.swift in Sources */,
@@ -479,6 +494,7 @@
 				3937F5EB2A196D1900EF20F0 /* UserEndpoint.swift in Sources */,
 				3937F5ED2A19708C00EF20F0 /* User.swift in Sources */,
 				3937F5F52A1986B900EF20F0 /* ExerciseServise.swift in Sources */,
+				158A52032A1998A600C05930 /* DaysEndpoint.swift in Sources */,
 				151EA0F02A18F4E70010CB73 /* Store.swift in Sources */,
 				157F2A782A191D780084DFD8 /* API.swift in Sources */,
 				159F57DC2A18B59200C724C6 /* ContentView.swift in Sources */,
@@ -499,7 +515,7 @@
 				157F2A802A191D830084DFD8 /* RequestError.swift in Sources */,
 				157F2A7E2A191D830084DFD8 /* RequestEncoder.swift in Sources */,
 				151EA0F62A1908390010CB73 /* ProfileView.swift in Sources */,
-				394789512A198EC5005F10C7 /* ExerciseViewModel.swift in Sources */,
+				394789512A198EC5005F10C7 /* CategoryViewModel.swift in Sources */,
 				157F2A7F2A191D830084DFD8 /* RequestMethod.swift in Sources */,
 				151EA0EE2A18F4CD0010CB73 /* TabBarIcon.swift in Sources */,
 				3937F5E62A196B4900EF20F0 /* Constants.swift in Sources */,
@@ -707,6 +723,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		158A51FB2A19960200C05930 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		39A2D35E2A19123100386B94 /* XCRemoteSwiftPackageReference "WalletConnectSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/penachett/WalletConnectSwift";
@@ -718,6 +742,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		158A51FC2A19960200C05930 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 158A51FB2A19960200C05930 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		39A2D35F2A19123100386B94 /* WalletConnectSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 39A2D35E2A19123100386B94 /* XCRemoteSwiftPackageReference "WalletConnectSwift" */;
