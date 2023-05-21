@@ -53,3 +53,4 @@ struct HomeView_Previews: PreviewProvider {
             .environmentObject(HomeViewModel(userService: UserService(), daysService: DaysService()))
     }
 }
+

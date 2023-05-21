@@ -23,7 +23,7 @@ struct CategoryCellView: View {
                 
                 VStack(alignment: .leading, spacing: 7) {
                     Text(title)
-                        .font(.system(size: 27))
+                        .font(.system(size: 25))
                         .fontWeight(.bold)
                     
                     HStack {
