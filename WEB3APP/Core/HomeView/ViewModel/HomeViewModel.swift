@@ -22,11 +22,16 @@ final class HomeViewModel: ObservableObject {
         if !Constants.userID.isEmpty {
             Task {
                 await featchUserInfo()
+                await fetchCountMonth()
             }
         }
     }
     
-    @Published var tokcenCount: [Int] = []
+    @Published var tokcenCount: [CountMonth] = [] {
+        didSet {
+            print(tokcenCount)
+        }
+    }
     @Published var calendar: [Calendarr] = Calendarr.FETCH_MOCKE
     @Published
     var showSheet: Bool = false
@@ -87,7 +92,13 @@ final class HomeViewModel: ObservableObject {
     
     @MainActor
     func fetchCountMonth() async {
-        //
+        let result = await daysService.getCountMouth()
+        switch result {
+        case.success(let date):
+            tokcenCount = date
+        case.failure(let error):
+            print(error.message)
+        }
     }
     
     @MainActor

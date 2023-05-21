@@ -50,7 +50,7 @@ struct MainScreenView: View {
                             
                             VStack(spacing: 12) {
                                 HStack {
-                                    Text("15 /")
+                                    Text("\(homeVM.tokcenCount.first?.totalPoints ?? 0) /")
                                     
                                     Text("30")
                                 }
@@ -170,6 +170,6 @@ struct MainScreenView: View {
 struct MainScreenView_Previews: PreviewProvider {
     static var previews: some View {
         MainScreenView()
-            .environmentObject(HomeViewModel(userService: UserService()))
+            .environmentObject(HomeViewModel(userService: UserService(), daysService: DaysService()))
     }
 }
