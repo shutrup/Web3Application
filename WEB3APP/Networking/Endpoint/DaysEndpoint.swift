@@ -10,6 +10,7 @@ import Foundation
 enum DaysEndpoint: Endpoint {
     case getDays
     case getDaysList
+    case countMouth
     
     var path: String {
         switch self {
@@ -17,19 +18,21 @@ enum DaysEndpoint: Endpoint {
             return API.apiDays
         case.getDaysList:
             return API.apiDaysList
+        case .countMouth:
+            return API.countMouth
         }
     }
     
     var method: RequestMethod {
         switch self {
-        case.getDays, .getDaysList:
+        case.getDays, .getDaysList, .countMouth:
             return .get
         }
     }
     
     var parameters: [String : Any]? {
         switch self {
-        case .getDays, .getDaysList:
+        case .getDays, .getDaysList, .countMouth:
             return nil
         }
     }
