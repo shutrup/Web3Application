@@ -50,6 +50,7 @@
 		3937F5F72A19873700EF20F0 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3937F5F62A19873700EF20F0 /* Exercise.swift */; };
 		393DACE72A18C7C300952202 /* WalletConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DACE62A18C7C300952202 /* WalletConnect.swift */; };
 		394789512A198EC5005F10C7 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394789502A198EC5005F10C7 /* CategoryViewModel.swift */; };
+		394789532A19F897005F10C7 /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394789522A19F897005F10C7 /* Transfer.swift */; };
 		39A2D3602A19123100386B94 /* WalletConnectSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 39A2D35F2A19123100386B94 /* WalletConnectSwift */; };
 		643810835F8AC1BDAFED2232 /* Pods_WEB3APP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3048D9C2711DEDB6E2129DC2 /* Pods_WEB3APP.framework */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,7 @@
 		3937F5F62A19873700EF20F0 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		393DACE62A18C7C300952202 /* WalletConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletConnect.swift; sourceTree = "<group>"; };
 		394789502A198EC5005F10C7 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		394789522A19F897005F10C7 /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
 		A8E61C6924B08BC94891C0C7 /* Pods-WEB3APP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WEB3APP.debug.xcconfig"; path = "Target Support Files/Pods-WEB3APP/Pods-WEB3APP.debug.xcconfig"; sourceTree = "<group>"; };
 		C6191FE5F49206CD2A30741D /* Pods-WEB3APP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WEB3APP.release.xcconfig"; path = "Target Support Files/Pods-WEB3APP/Pods-WEB3APP.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -319,6 +321,7 @@
 				3937F5F62A19873700EF20F0 /* Exercise.swift */,
 				158A52042A199BE700C05930 /* Days.swift */,
 				158A520D2A19C06400C05930 /* Calendar.swift */,
+				394789522A19F897005F10C7 /* Transfer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -404,7 +407,7 @@
 				159F57D22A18B59200C724C6 /* Sources */,
 				159F57D32A18B59200C724C6 /* Frameworks */,
 				159F57D42A18B59200C724C6 /* Resources */,
-				2C6104F7FCA5FDEAB0775997 /* [CP] Embed Pods Frameworks */,
+				3B369E518F313CC1CDDFD217 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -491,7 +494,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2C6104F7FCA5FDEAB0775997 /* [CP] Embed Pods Frameworks */ = {
+		3B369E518F313CC1CDDFD217 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -544,6 +547,7 @@
 				157F2A892A191D9C0084DFD8 /* Data.swift in Sources */,
 				151EA0EB2A18EED90010CB73 /* TabBarView.swift in Sources */,
 				158A52092A19A2A600C05930 /* DetailCategory.swift in Sources */,
+				394789532A19F897005F10C7 /* Transfer.swift in Sources */,
 				393DACE72A18C7C300952202 /* WalletConnect.swift in Sources */,
 				3937F5F32A19860300EF20F0 /* ExerciseEndpoint.swift in Sources */,
 				157F2A882A191D9C0084DFD8 /* Dictionary.swift in Sources */,

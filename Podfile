@@ -6,12 +6,8 @@ target 'WEB3APP' do
   use_frameworks!
 
   # Pods for WEB3APP
-
-	pod 'Web3'
-	pod 'Web3/PromiseKit'
-	pod 'Web3/ContractABI'
-
-	post_install do |installer|
+	pod 'web3.swift'
+post_install do |installer|
     installer.generated_projects.each do |project|
           project.targets.each do |target|
               target.build_configurations.each do |config|
@@ -20,5 +16,4 @@ target 'WEB3APP' do
           end
    end
 end
-
 end

@@ -23,7 +23,7 @@ struct CategoryCellView: View {
                 
                 VStack(alignment: .leading, spacing: 7) {
                     Text(title)
-                        .font(.system(size: 27))
+                        .font(.system(size: 25))
                         .fontWeight(.bold)
                     
                     HStack {
@@ -48,7 +48,8 @@ struct CategoryCellView: View {
                         .foregroundColor(.accenttColor)
                     
                     Text("\(point)")
-                        .font(.system(size: 27))
+                        
+                        .font(.system(size: 25))
                         .fontWeight(.bold)
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
