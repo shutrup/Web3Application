@@ -19,7 +19,7 @@ struct CategoryCellView: View {
             HStack {
                 WebImage(url: URL(string: imageUrl))
                     .resizable()
-                    .frame(width: 84, height: 47)
+                    .frame(width: 84, height: 50)
                 
                 VStack(alignment: .leading, spacing: 7) {
                     Text(title)

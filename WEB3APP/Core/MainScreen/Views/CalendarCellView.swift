@@ -8,22 +8,32 @@
 import SwiftUI
 
 struct CalendarCellView: View {
-    let day: Int
+    let calendar: Calendarr
+    
     var body: some View {
-        Text("\(day)")
-            .font(.system(size: 27))
-            .bold()
-            .padding(.vertical, 16)
-            .padding(.horizontal, 24.5)
-            .background(
-                RoundedRectangle(cornerRadius: 14)
-                    .stroke(Color.accenttColor, lineWidth: 3)
+        VStack {
+            Text("\(calendar.day)")
+                .font(.system(size: 25))
+                .bold()
+                .padding(.vertical, 16)
+                .padding(.horizontal, 25)
+                .frame(width: 83, height: 75)
+                .background(
+                    RoundedRectangle(cornerRadius: 14)
+                        .stroke(calendar.isSuccess ? Color.accenttColor : Color.gray, lineWidth: 3)
             )
+            
+            if calendar.isSelected {
+                Circle()
+                    .fill(Color.accenttColor)
+                    .frame(width: 8, height: 8)
+            }
+        }
     }
 }
 
 struct CalendarCellView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarCellView(day: 1)
+        CalendarCellView(calendar: Calendarr.FETCH_MOCKE.first!)
     }
 }

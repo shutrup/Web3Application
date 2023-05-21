@@ -28,3 +28,12 @@ struct Dayslist: Codable, Hashable {
     }
 }
 
+struct CountMonth: Codable ,Hashable {
+    let month: String
+    let totalPoints: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case month
+        case totalPoints = "total_points"
+    }
+}

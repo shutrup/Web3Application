@@ -23,7 +23,7 @@ final class HomeViewModel: ObservableObject {
             }
         }
     }
-   
+    @Published var calendar: [Calendarr] = Calendarr.FETCH_MOCKE
     @Published
     var showSheet: Bool = false
     @Published
@@ -79,6 +79,11 @@ final class HomeViewModel: ObservableObject {
         case.failure(let error):
             print(error.message)
         }
+    }
+    
+    @MainActor
+    func fetchCountMonth() async {
+        //
     }
     
     @MainActor
