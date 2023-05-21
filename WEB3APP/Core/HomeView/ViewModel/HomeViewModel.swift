@@ -14,16 +14,19 @@ import PromiseKit
 final class HomeViewModel: ObservableObject {
     
     let userService: UserServiceProtocol
+    let daysService: DaysServiceProtocol
     
-    init(userService: UserServiceProtocol) {
+    init(userService: UserServiceProtocol, daysService: DaysService) {
         self.userService = userService
+        self.daysService = daysService
         if !Constants.userID.isEmpty {
             Task {
                 await featchUserInfo()
             }
         }
     }
-   
+    
+    @Published var tokcenCount: [Int] = []
     @Published
     var showSheet: Bool = false
     @Published
@@ -91,13 +94,26 @@ final class HomeViewModel: ObservableObject {
             print(error.message)
         }
     }
+    
+    @MainActor func getDays() async {
+        let result = await daysService.getDays()
+        switch result {
+        case.success(let data):
+            print(data)
+        case.failure(let error):
+            print(error.message)
+        }
+    }
+    
+    
+    
     //MARK: Smart Contract//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     func chekBalanse() throws {
         let web3 = Web3(rpcURL: "https://rpc.ankr.com/eth_goerli")
         let contractAddress = try EthereumAddress(hex: "0xedc5A7c3f9269E1BB848bB9aACBB5BE1C82bE45f", eip55: true)
         let contract = try web3.eth.Contract(type: GenericERC20Contract.self, address: contractAddress)
-
+//        let f = try web3.eth.con
 //        firstly {
 //            try contract.balanceOf(address: EthereumAddress(hex: "0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8", eip55: true)).call()
 //        }.done { outputs in

@@ -50,6 +50,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environmentObject(HomeViewModel(userService: UserService()))
+            .environmentObject(HomeViewModel(userService: UserService(), daysService: DaysService()))
     }
 }

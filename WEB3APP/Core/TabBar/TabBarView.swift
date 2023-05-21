@@ -28,7 +28,7 @@ struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         TabBarView()
             .environmentObject(Store())
-            .environmentObject(HomeViewModel(userService: UserService()))
+            .environmentObject(HomeViewModel(userService: UserService(), daysService: DaysService()))
     }
 }
 

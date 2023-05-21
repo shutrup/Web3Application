@@ -8,13 +8,13 @@
 import Foundation
 
 protocol DaysServiceProtocol {
-    func getDays() async -> Result<Days, RequestError>
+    func getDays() async -> Result<[Days], RequestError>
     func getDaysList() async -> Result<Dayslist, RequestError>
 }
 
 class DaysService: BaseRequest, DaysServiceProtocol {
-    func getDays() async -> Result<Days, RequestError> {
-        return await sendRequest(endpoint: DaysEndpoint.getDays, responseModel: Days.self)
+    func getDays() async -> Result<[Days], RequestError> {
+        return await sendRequest(endpoint: DaysEndpoint.getDays, responseModel: [Days].self)
     }
 
     func getDaysList() async -> Result<Dayslist, RequestError> {
