@@ -15,7 +15,7 @@ struct ProfileView: View {
             LinearGradient(gradient: Gradient(colors: [.black, .accenttColor.opacity(0.4)]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
             
             VStack {
-                Text("Connected to \(vm.walletName) + \(vm.userName)")
+                Text("Connected to \(vm.walletName) \(vm.userName)")
                     .font(.system(size: 17))
                     .fontWeight(.bold)
                 
@@ -41,7 +41,6 @@ struct ProfileView: View {
                         } catch {
                             print(error)
                         }
-    //                    vm.sendTx(to: "0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8")
                     } label: {
                         HStack {
                             Spacer()
@@ -61,6 +60,7 @@ struct ProfileView: View {
                 
                 Button {
                     vm.disconnect()
+                    Constants.userID = ""
                 } label: {
                     HStack {
                         Spacer()
