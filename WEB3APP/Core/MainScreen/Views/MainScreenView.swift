@@ -57,7 +57,7 @@ struct MainScreenView: View {
                                 .fontWeight(.bold)
                                 .font(.system(size: 27))
                                 
-                                Text("Осталось 15 очков!")
+                                Text("Осталось \(30 - (homeVM.days?.total_points ?? 0)) очков!")
                                     .opacity(0.86)
                                     .font(.system(size: 15))
                                     .fontWeight(.semibold)
@@ -135,6 +135,7 @@ struct MainScreenView: View {
         .onAppear {
             Task {
                 await homeVM.getDays()
+                await homeVM.fetchCountMonth()
             }
         }
     }

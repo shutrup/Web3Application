@@ -25,7 +25,7 @@ final class HomeViewModel: ObservableObject {
             }
         }
     }
-    
+    @AppStorage("userID") var userID = String()
     @Published var days: Days? = nil
     @Published var month: CountMonth? = nil
     @Published var calendar: [Calendarr] = Calendarr.FETCH_MOCKE
@@ -78,7 +78,7 @@ final class HomeViewModel: ObservableObject {
         switch result {
         case.success(let data):
             userName = data.first_name
-            Constants.userID = data.id
+            self.userID = data.id
         case.failure(let error):
             print(error.message)
         }

@@ -10,15 +10,15 @@ import Foundation
 struct API {
     static var baseUrl = "http://195.135.255.26"
     
-    static var apiDays = "/api/\(Constants.userID)/days"
-    static var apiDaysList = "/api/\(Constants.userID)/days/list"
+    static var apiDays = "/api/0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8/days"
+    static var apiDaysList = "/api/0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8/days/list"
     
     static var createUser = "/api/user/"
-    static var getUserInfo = "/api/user/\(Constants.userID)/"
+    static var getUserInfo = "/api/user/0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8/"
     
     static var exercises = "/api/exercise/"
     static var exercise = "/api/exercise/"
     
-    static var countMouth = "/api/\(Constants.userID)/count_mouth"
+    static var countMouth = "/api/0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8/count_mouth"
 }
 
