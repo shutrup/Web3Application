@@ -22,21 +22,15 @@ final class HomeViewModel: ObservableObject {
         if !Constants.userID.isEmpty {
             Task {
                 await featchUserInfo()
-                await fetchCountMonth()
             }
         }
     }
     
-    @Published var tokcenCount: [CountMonth] = [] {
-        didSet {
-            print(tokcenCount)
-        }
-    }
+    @Published var days: Days? = nil
+    @Published var month: CountMonth? = nil
     @Published var calendar: [Calendarr] = Calendarr.FETCH_MOCKE
-    @Published
-    var showSheet: Bool = false
-    @Published
-    var session: Session?
+    @Published var showSheet: Bool = false
+    @Published var session: Session?
     {
         didSet {
             if session != nil , Constants.userID.isEmpty{
@@ -94,8 +88,8 @@ final class HomeViewModel: ObservableObject {
     func fetchCountMonth() async {
         let result = await daysService.getCountMouth()
         switch result {
-        case.success(let date):
-            tokcenCount = date
+        case.success(let success):
+            month = success.first
         case.failure(let error):
             print(error.message)
         }
@@ -116,7 +110,7 @@ final class HomeViewModel: ObservableObject {
         let result = await daysService.getDays()
         switch result {
         case.success(let data):
-            print(data)
+            days = data.first
         case.failure(let error):
             print(error.message)
         }

@@ -50,7 +50,7 @@ struct MainScreenView: View {
                             
                             VStack(spacing: 12) {
                                 HStack {
-                                    Text("\(homeVM.tokcenCount.first?.totalPoints ?? 0) /")
+                                    Text("\(homeVM.days?.total_points ?? 0) /")
                                     
                                     Text("30")
                                 }
@@ -69,7 +69,7 @@ struct MainScreenView: View {
                     
                     VStack(spacing: 7) {
                         HStack {
-                            Text("0")
+                            Text("\(homeVM.month?.totalPoints ?? 0)")
                                 .font(.system(size: 27))
                                 .fontWeight(.bold)
                             
@@ -86,7 +86,7 @@ struct MainScreenView: View {
                         }
                         .padding(.horizontal)
                         
-                        ProgressView(value: 10, total: 50)
+                        ProgressView(value: Double(homeVM.month?.totalPoints ?? 0), total: 50)
                             .tint(.accenttColor)
                             .frame(height: 5)
                             .cornerRadius(10)
@@ -130,6 +130,11 @@ struct MainScreenView: View {
                     
                     Spacer()
                 }
+            }
+        }
+        .onAppear {
+            Task {
+                await homeVM.getDays()
             }
         }
     }

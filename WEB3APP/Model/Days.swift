@@ -8,8 +8,8 @@
 import Foundation
 
 struct Days: Codable, Hashable {
-    var exerciseuser__date: String
-    var point__sum: Int
+    var day: String
+    var total_points: Int
 }
 
 struct Dayslist: Codable, Hashable {
