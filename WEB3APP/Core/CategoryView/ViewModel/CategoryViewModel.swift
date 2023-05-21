@@ -5,7 +5,7 @@
 //  Created by timur on 21.05.2023.
 //
 
-import Foundation
+import SwiftUI
 
 final class CategoryViewModel: ObservableObject {
     
@@ -16,6 +16,16 @@ final class CategoryViewModel: ObservableObject {
     }
     
     @Published var exercises: [Results] = []
+    @Published var currentExercise: Results? = nil {
+        didSet {
+            if currentExercise != nil {
+                withAnimation {
+                    showDetailView = true
+                }
+            }
+        }
+    }
+    @Published var showDetailView: Bool = false
     
     @MainActor func getExercises() async {
         let result = await exerciseService.getExercises()
@@ -31,7 +41,7 @@ final class CategoryViewModel: ObservableObject {
         let result = await exerciseService.getExercise(id: id)
         switch result {
         case .success(let success):
-            print(success)
+            currentExercise = success
         case .failure(let failure):
             print(failure.message)
         }

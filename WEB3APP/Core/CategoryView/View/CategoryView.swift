@@ -11,22 +11,35 @@ struct CategoryView: View {
     @StateObject var vm = CategoryViewModel(exerciseService: ExerciseService())
     
     var body: some View {
-        ScrollView(showsIndicators: false){
-            VStack(spacing: 35) {
-                ForEach(vm.exercises, id: \.self) { exercises in
-                    CategoryCellView(title: exercises.title, minute: exercises.secondsTime, point: exercises.point, imageUrl: exercises.photos.the1)
-                        .onTapGesture {
-                            Task {
-                                await vm.getExercise(id: exercises.id)
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [.black, .accenttColor.opacity(0.4)]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
+            
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 35) {
+                    ForEach(vm.exercises, id: \.self) { exercises in
+                        ZStack {
+                            CategoryCellView(title: exercises.title, minute: exercises.secondsTime, point: exercises.point, imageUrl: exercises.photos.the1)
+                                .onTapGesture {
+                                    Task {
+                                        await vm.getExercise(id: exercises.id)
+                                    }
+                            }
+                            
+                            NavigationLink(isActive: $vm.showDetailView) {
+                                DetailCategory()
+                                    .environmentObject(vm)
+                            } label: {
+                                EmptyView()
                             }
                         }
+                    }
                 }
             }
+            .onAppear {
+                Task {
+                    await vm.getExercises()
+                }
         }
-        .onAppear {
-            Task {
-                await vm.getExercises()
-            }
         }
     }
 }
