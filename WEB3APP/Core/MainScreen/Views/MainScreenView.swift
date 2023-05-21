@@ -50,14 +50,14 @@ struct MainScreenView: View {
                             
                             VStack(spacing: 12) {
                                 HStack {
-                                    Text("\(homeVM.days?.total_points ?? 0) /")
+                                    Text("\(homeVM.day?.total_points ?? 0) /")
                                     
                                     Text("30")
                                 }
                                 .fontWeight(.bold)
                                 .font(.system(size: 27))
                                 
-                                Text("Осталось \(30 - (homeVM.days?.total_points ?? 0)) очков!")
+                                Text("Осталось \(30 - (homeVM.day?.total_points ?? 0)) очков!")
                                     .opacity(0.86)
                                     .font(.system(size: 15))
                                     .fontWeight(.semibold)
@@ -69,7 +69,7 @@ struct MainScreenView: View {
                     
                     VStack(spacing: 7) {
                         HStack {
-                            Text("\(homeVM.month?.totalPoints ?? 0)")
+                            Text("\(Double(homeVM.month?.totalPoints ?? 0) / 30)")
                                 .font(.system(size: 27))
                                 .fontWeight(.bold)
                             
@@ -80,13 +80,13 @@ struct MainScreenView: View {
                             
                             Spacer()
                             
-                            Text("50")
+                            Text("150")
                                 .font(.system(size: 27))
                                 .fontWeight(.bold)
                         }
                         .padding(.horizontal)
                         
-                        ProgressView(value: Double(homeVM.month?.totalPoints ?? 0), total: 50)
+                        ProgressView(value: (Double(homeVM.month?.totalPoints ?? 0) / 30).rounded() , total: 150)
                             .tint(.accenttColor)
                             .frame(height: 5)
                             .cornerRadius(10)
@@ -120,8 +120,8 @@ struct MainScreenView: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            ForEach(homeVM.calendar, id: \.self) { day in
-                                CalendarCellView(calendar: day)
+                            ForEach(homeVM.days, id: \.self) { day in
+                                CalendarCellView(day: day)
                                     .padding(2)
                             }
                         }

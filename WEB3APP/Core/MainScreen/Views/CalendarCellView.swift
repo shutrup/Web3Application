@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct CalendarCellView: View {
-    let calendar: Calendarr
+    let day: Days
+    
+    var date: String {
+        let date = Date(date: day.day, format: "yyyy-MM-dd")
+        return date?.toString(format: "dd") ?? ""
+    }
     
     var body: some View {
         VStack {
-            Text("\(calendar.day)")
+            Text("\(date)")
                 .font(.system(size: 25))
                 .bold()
                 .padding(.vertical, 16)
@@ -20,10 +25,10 @@ struct CalendarCellView: View {
                 .frame(width: 83, height: 75)
                 .background(
                     RoundedRectangle(cornerRadius: 14)
-                        .stroke(calendar.isSuccess ? Color.accenttColor : Color.gray, lineWidth: 3)
+                        .stroke(day.total_points >= 30 ? Color.accenttColor : Color.gray, lineWidth: 3)
             )
             
-            if calendar.isSelected {
+            if day.day == Date.now.isFormat {
                 Circle()
                     .fill(Color.accenttColor)
                     .frame(width: 8, height: 8)
@@ -34,6 +39,6 @@ struct CalendarCellView: View {
 
 struct CalendarCellView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarCellView(calendar: Calendarr.FETCH_MOCKE.first!)
+        CalendarCellView(day: Days(day: "0", total_points: 0))
     }
 }

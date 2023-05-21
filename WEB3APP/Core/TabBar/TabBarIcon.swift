@@ -15,11 +15,11 @@ struct TabBarIcon: View {
         VStack {
             Image(tab.icon)
                 .resizable()
-                .frame(width: currentTab == tab ? 80: 80, height: currentTab == tab ? 80: 80)
+                .frame(width: currentTab == tab ? 70: 60, height: currentTab == tab ? 70: 60)
         }
-        .scaleEffect(0.3)
+        .scaleEffect(0.4)
         .background(currentTab == tab ? Color.accentColor : .clear)
-        .cornerRadius(28)
+        .cornerRadius(58)
         .padding(.bottom, currentTab == tab ? 5: 0 )
         .onTapGesture {
             withAnimation {

@@ -26,7 +26,8 @@ final class HomeViewModel: ObservableObject {
     }
 
     @AppStorage("userID") var userID = String()
-    @Published var days: Days? = nil
+    @Published var days: [Days] = []
+    @Published var day: Days? = nil
     @Published var month: CountMonth? = nil
     @Published var calendar: [Calendarr] = Calendarr.FETCH_MOCKE
     @Published var showSheet: Bool = false
@@ -109,9 +110,14 @@ final class HomeViewModel: ObservableObject {
     @MainActor func getDays() async {
         let result = await daysService.getDays()
         switch result {
-        case let .success(data):
-            days = data.first
-        case let .failure(error):
+        case.success(let data):
+        days = data
+        data.map {
+                if $0.day == Date.now.isFormat {
+                    day = $0
+                }
+            }
+        case.failure(let error):
             print(error.message)
         }
     }
