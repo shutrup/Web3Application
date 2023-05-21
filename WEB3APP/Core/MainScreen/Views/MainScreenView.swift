@@ -69,7 +69,7 @@ struct MainScreenView: View {
                     
                     VStack(spacing: 7) {
                         HStack {
-                            Text("\(Double(homeVM.month?.totalPoints ?? 0) / 30)")
+                            Text("\(Int(homeVM.month?.totalPoints ?? 0) / 30)")
                                 .font(.system(size: 27))
                                 .fontWeight(.bold)
                             
