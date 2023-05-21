@@ -121,7 +121,6 @@ struct DetailCategory: View {
                 
                 Button(role: .destructive) {
                     vm.stopTimer()
-                    categoryVM.currentExercise = nil
                     Task {
                         await categoryVM.exerciseUser(user: "0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8", exercise: categoryVM.currentExercise?.id ?? 0)
                     }

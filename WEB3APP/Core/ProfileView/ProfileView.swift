@@ -37,7 +37,7 @@ struct ProfileView: View {
                 } else {
                     Button {
                         do {
-                            try vm.contract()
+//                            try vm.contract()
                         } catch {
                             print(error)
                         }

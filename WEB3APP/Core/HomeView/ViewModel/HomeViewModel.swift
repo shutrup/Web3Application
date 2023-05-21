@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 import WalletConnectSwift
-import web3
 import BigInt
 
 final class HomeViewModel: ObservableObject {
@@ -122,41 +121,41 @@ final class HomeViewModel: ObservableObject {
         }
     }
     
-    func contract() {
-      
-        let keyStorage = EthereumKeyLocalStorage()
-        let account = (try? EthereumAccount.create(replacing: keyStorage, keystorePassword: "MY_PASSWORD"))!
-        
-        guard let clientUrl = URL(string: "https://rpc.ankr.com/eth_goerli") else { return }
-        let client = EthereumHttpClient(url: clientUrl)
-        var d: BigUInt = 1
-        let gas = client.eth_gasPrice { (currentPrice) in
-            switch currentPrice {
-            case .success(let data):
-                print(data)
-                d = data
-            case .failure(let pohuy):
-                print("yai")
-            }
-            
-        }
-        
-        
-        let function = Transfer(contract: "0xe5e38B06Edca4913b5469A7f1FA9010258002041", from: "0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8", to: "0xbC395f352C35AeA56e885539aA5aC468326ECB8D", value: BigUInt(0.1))
-        do {
-            let transaction = try function.transaction(gasPrice: d)
-            client.eth_sendRawTransaction(transaction, withAccount: account) { (txHash) in
-                print("TX Hash: \(txHash)")
-            }
-        } catch {
-            print("хуйна")
-        }
-       
-      
-//        client.eth_sendRawTransaction(transaction, withAccount: account) { ( txHash) in
-//            print("TX Hash: \(txHash)")
+//    func contract() {
+//
+//        let keyStorage = EthereumKeyLocalStorage()
+//        let account = (try? EthereumAccount.create(replacing: keyStorage, keystorePassword: "MY_PASSWORD"))!
+//
+//        guard let clientUrl = URL(string: "https://rpc.ankr.com/eth_goerli") else { return }
+//        let client = EthereumHttpClient(url: clientUrl)
+//        var d: BigUInt = 1
+//        let gas = client.eth_gasPrice { (currentPrice) in
+//            switch currentPrice {
+//            case .success(let data):
+//                print(data)
+//                d = data
+//            case .failure(let pohuy):
+//                print("yai")
+//            }
+//
 //        }
-    }
+//
+//
+//        let function = Transfer(contract: "0xe5e38B06Edca4913b5469A7f1FA9010258002041", from: "0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8", to: "0xbC395f352C35AeA56e885539aA5aC468326ECB8D", value: BigUInt(0.1))
+//        do {
+//            let transaction = try function.transaction(gasPrice: d)
+//            client.eth_sendRawTransaction(transaction, withAccount: account) { (txHash) in
+//                print("TX Hash: \(txHash)")
+//            }
+//        } catch {
+//            print("хуйна")
+//        }
+//
+//
+////        client.eth_sendRawTransaction(transaction, withAccount: account) { ( txHash) in
+////            print("TX Hash: \(txHash)")
+////        }
+//    }
     
     func openWallet() {
         if let wallet = currentWallet {
