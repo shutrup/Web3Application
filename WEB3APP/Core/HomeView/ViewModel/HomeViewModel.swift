@@ -91,20 +91,34 @@ final class HomeViewModel: ObservableObject {
             print(error.message)
         }
     }
+    //MARK: Smart Contract//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     func chekBalanse() throws {
         let web3 = Web3(rpcURL: "https://rpc.ankr.com/eth_goerli")
         let contractAddress = try EthereumAddress(hex: "0xedc5A7c3f9269E1BB848bB9aACBB5BE1C82bE45f", eip55: true)
         let contract = try web3.eth.Contract(type: GenericERC20Contract.self, address: contractAddress)
-         
+
+//        firstly {
+//            try contract.balanceOf(address: EthereumAddress(hex: "0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8", eip55: true)).call()
+//        }.done { outputs in
+//            print(outputs["_balance"] as? BigUInt)
+//        }.catch { error in
+//            print("плохо")
+//        }
+        
+        
+        let myAddress = try EthereumAddress(hex: "0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8", eip55: true)
         firstly {
-            try contract.balanceOf(address: EthereumAddress(hex: "0xd9f57fc7CDcAa2D11f49C0c9629432802355c6D8", eip55: true)).call()
-        }.done { outputs in
-            print(outputs["_balance"] as? BigUInt)
+            web3.eth.getTransactionCount(address: myAddress, block: .latest)
+        }.then { nonce in
+            try contract.transferFrom(from: myAddress, to: EthereumAddress(hex: "0xbC395f352C35AeA56e885539aA5aC468326ECB8D", eip55: true), value: 1000000).send(from: myAddress, value: .none, gas: EthereumQuantity(quantity: BigUInt(1000000)), gasPrice: EthereumQuantity(quantity: 21.gwei))
+        }.done { txHash in
+            print(txHash)
         }.catch { error in
-            print("плохо")
+            print(error)
         }
     }
+    
     
     func openWallet() {
         if let wallet = currentWallet {
